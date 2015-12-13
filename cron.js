@@ -9,7 +9,6 @@ let fs = require('fs')
 
 co(function * () {
   let time = moment().format('YYYYMMDD-HHmm');
-  console.log(time);
   const api = 'http://api-dsa.17app.co/apiGateWay'
   const headers = {
     'User-Agent': 'okhttp/2.0.4',
