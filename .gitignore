@@ -2,3 +2,4 @@ node_modules/*
 local.js
 static/components/*
 hots/*
+static/hots/*

@@ -111,6 +111,12 @@ router.get('/stream/:sid', function*(){
   this.body = JSON.parse(response.body).data
 })
 
+router.get('/collection', function*(){
+  let files = fs.readdirSync(__dirname + '/static/hots')
+  this.status = 200;
+  this.body = files;
+})
+
 app.use(router.routes())
 app.use(require('koa-static')(__dirname + '/static'))
 

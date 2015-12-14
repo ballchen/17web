@@ -6,13 +6,9 @@ let uuid = require('node-uuid')
 let moment = require('moment')
 let fs = require('fs')
 
-var tick = function(){
-  console.log(1)
-}
-
 var CronJob = require('cron').CronJob;
 var job = new CronJob({
-  cronTime: '0 * * * * *',
+  cronTime: '0 */10 * * * *',
   onTick: function(){
     let time = moment().format('YYYYMMDD-HHmm');
     const api = 'http://api-dsa.17app.co/apiGateWay'
@@ -36,7 +32,7 @@ var job = new CronJob({
       form: data
     }, function(err, response, body){
       let streams = JSON.parse(response.body).data
-      fs.writeFileSync('./hots/'+time+'.json', streams)
+      fs.writeFileSync('./static/hots/'+time+'.json', streams)
       console.log('%s - %s streams', time, JSON.parse(streams).length)
     })
   },
