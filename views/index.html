@@ -4,12 +4,22 @@
 		<base href="/">
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="/css/style.css">
+		<link rel="stylesheet" href="/components/bootstrap/dist/css/bootstrap.min.css">
 	</head>
 	<body>
 		<h2>Hotlivestreams</h2>
-		<ul>
-			<li ng-repeat="c in collections"><a href="/hots/{{c}}">{{c}}</a></li>
-		</ul>
+		<div class="container">
+			<div class="col-md-4">
+				
+				<ul>
+					<li ng-repeat="c in collections"><a ng-click="getCollection(c)" href="#">{{c}}</a></li>
+				</ul>
+			</div>
+			<div class="col-md-8">
+				<pre ng-bind="current|json"></pre>
+			</div>
+		</div>	
+		
 
 		<script src="/components/jquery/dist/jquery.min.js"></script>
 		<script src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
