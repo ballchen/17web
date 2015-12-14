@@ -6,7 +6,10 @@
 		<link rel="stylesheet" href="/css/style.css">
 	</head>
 	<body>
-		hello!
+		<h2>Hotlivestreams</h2>
+		<ul>
+			<li ng-repeat="c in collections"><a href="/hots/{{c}}">{{c}}</a></li>
+		</ul>
 
 		<script src="/components/jquery/dist/jquery.min.js"></script>
 		<script src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
