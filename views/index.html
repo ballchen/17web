@@ -9,16 +9,18 @@
 	<body>
 		<h2>Hotlivestreams</h2>
 		<div class="container">
-			<div class="col-md-4">
+			<div class="col-md-2">
 				<div ng-repeat="(idx, d) in collections">
-					<h3 ng-click="Show(idx)">{{idx}}</h3>
-					<ul ng-show="showList == idx">
-						<li ng-repeat="c in d"><a ng-click="getCollection(c)" href="#">{{c}}</a></li>
-					</ul>
-
+					<h3 ng-click="Select(idx)">{{idx}}</h3>
 				</div>
 			</div>
-			<div class="col-md-8">
+			<div class="col-md-3">
+				<div>{{date}}</div>
+				<ul ng-show="showList == idx">
+					<li ng-repeat="c in filelist"><a ng-click="getCollection(c)" href="#">{{c}}</a></li>
+				</ul>
+			</div>
+			<div class="col-md-7">
 				<pre ng-bind="current|json"></pre>
 			</div>
 		</div>	
