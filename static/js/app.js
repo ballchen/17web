@@ -15,7 +15,7 @@ app.controller('MainCtrl', ['$scope', '$http', function($scope, $http){
 	}
 
 	$scope.Select = function(i){
-		$scope.data = i;
+		$scope.date = i;
 		$scope.filelist = $scope.collections[i];
 	}
 }])
