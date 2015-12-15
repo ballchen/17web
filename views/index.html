@@ -10,10 +10,13 @@
 		<h2>Hotlivestreams</h2>
 		<div class="container">
 			<div class="col-md-4">
-				
-				<ul>
-					<li ng-repeat="c in collections"><a ng-click="getCollection(c)" href="#">{{c}}</a></li>
-				</ul>
+				<div ng-repeat="(idx, d) in collections">
+					<h3 ng-click="Show(idx)">{{idx}}</h3>
+					<ul ng-show="showList == idx">
+						<li ng-repeat="c in d"><a ng-click="getCollection(c)" href="#">{{c}}</a></li>
+					</ul>
+
+				</div>
 			</div>
 			<div class="col-md-8">
 				<pre ng-bind="current|json"></pre>
@@ -22,6 +25,7 @@
 		
 
 		<script src="/components/jquery/dist/jquery.min.js"></script>
+		<script src="/components/lodash/lodash.min.js"></script>
 		<script src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
 		<script src="/components/angular/angular.min.js"></script>
 
