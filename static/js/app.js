@@ -18,4 +18,12 @@ app.controller('MainCtrl', ['$scope', '$http', function($scope, $http){
 		$scope.date = i;
 		$scope.filelist = $scope.collections[i];
 	}
+
+	$scope.getUser = function(oid){
+		$scope.showUser = true;
+		$scope.user = {};
+		$http.get('/user/'+oid).success(function(user){
+			$scope.user = user;
+		})
+	}
 }])
