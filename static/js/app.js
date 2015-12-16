@@ -10,7 +10,7 @@ app.controller('MainCtrl', ['$scope', '$http', function($scope, $http){
 
 	$scope.getCollection = function(name){
 		$http.get('/hots/'+name).success(function(data){
-			$scope.current = data
+			$scope.streams = data
 		})
 	}
 

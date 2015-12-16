@@ -10,7 +10,7 @@
 		<h2>Hotlivestreams</h2>
 		<div class="container">
 			<div class="col-md-2">
-				<div ng-repeat="(idx, d) in collections">
+				<div class="date" ng-repeat="(idx, d) in collections">
 					<h3 ng-click="Select(idx)">{{idx}}</h3>
 				</div>
 			</div>
@@ -21,7 +21,16 @@
 				</ul>
 			</div>
 			<div class="col-md-7">
-				<pre ng-bind="current|json"></pre>
+				<div class="row">
+					<div class="col-xs-3">標題</div>
+					<div class="col-xs-3">人</div>
+					<div class="col-xs-3">讚數</div>
+				</div>
+				<div class="row" ng-repeat="s in streams">
+					<div class="col-xs-3" ng-bind="s.caption?s.caption:'無題'"></div>
+					<div class="col-xs-3" ng-bind="s.userInfo.openID"></div>
+					<div class="col-xs-3" ng-bind="s.liveViewerCount"></div>
+				</div>
 			</div>
 		</div>	
 		
