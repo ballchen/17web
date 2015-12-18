@@ -28,14 +28,16 @@
 						<div class="col-xs-3">人</div>
 						<div class="col-xs-3">讚數</div>
 					</div>
-					<div class="row" ng-repeat="s in streams" style="padding-bottom:5px; padding-top:5px; border-top: solid 1px rgba(0,0,0,0.2);">
-						<div class="col-xs-3" ng-bind="s.caption?s.caption:'無題'"></div>
-						<div class="col-xs-2" ng-bind="s.userInfo.gender"></div>
-						<div class="col-xs-3">
-							<a href="#" ng-click="getUser(s.userInfo.openID)" ng-bind="s.userInfo.openID"></a>
-						</div>
-						<div class="col-xs-3" ng-bind="s.liveViewerCount"></div>
-					</div>
+					<table class="table table-striped">
+						<tr ng-repeat="s in streams" style="padding-bottom:5px; padding-top:5px;">
+							<td class="col-xs-3" ng-bind="s.caption?s.caption:'無題'"></td>
+							<td class="col-xs-2" ng-bind="s.userInfo.gender"></td>
+							<td class="col-xs-3">
+								<a href="#" ng-click="getUser(s.userInfo.openID)" ng-bind="s.userInfo.openID"></a>
+							</td>
+							<td class="col-xs-3" ng-bind="s.liveViewerCount"></td>
+						</tr>
+					</table>
 				</div>
 			</div>		
 		</section>
